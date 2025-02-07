@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Phone Book";
+}
+<div class="d-flex flex-column justify-content-center align-items-center gap-3">
+    <form method="post">
+        <label asp-for="Entry.PhoneNumber">Telefonszám</label>
+        <input type="text" asp-for="Entry.PhoneNumber" required />
+        <span asp-validation-for="Entry.PhoneNumber"></span>
+
+        <label asp-for="Entry.Name">Név</label>
+        <input type="text" asp-for="Entry.Name" required />
+        <span asp-validation-for="Entry.Name"></span>
+
+        <button type="submit">submit</button>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Phone Number</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entry in Model.PhoneBook)
+            {
+                <tr>
+                    <td>@entry.PhoneNumber</td>
+                    <td>@entry.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
