@@ -5,17 +5,19 @@
 }
 <div class="d-flex flex-column justify-content-center align-items-center gap-3">
     <form method="post">
-        <label asp-for="Entry.PhoneNumber">Telefonszám</label>
-        <input type="text" asp-for="Entry.PhoneNumber" required />
+        <label asp-for="Entry.PhoneNumber">Telefonszám:</label>
+        <input type="text" class="form-control" asp-for="Entry.PhoneNumber" required />
         <span asp-validation-for="Entry.PhoneNumber"></span>
 
-        <label asp-for="Entry.Name">Név</label>
-        <input type="text" asp-for="Entry.Name" required />
+        <label asp-for="Entry.Name">Név:</label>
+        <input type="text" class="form-control" asp-for="Entry.Name" required />
         <span asp-validation-for="Entry.Name"></span>
 
-        <button type="submit">Submit</button>
+        <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn btn-dark mt-4">Küldés</button>
+        </div>
     </form>
-    <table class="table">
+    <table class="table table-striped border border-4 rounded-4">
         <thead>
             <tr>
                 <th>Phone Number</th>
